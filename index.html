@@ -1,0 +1,91 @@
+<html>
+    <body>
+        <link ref="stylesheet" href="style.css">
+        <div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <h1>Hmm So , Will u be my Valentine?</h1>
+            <img id="Ahmm" src="C:\Users\mohdm\Downloads\Untitled design (1).png" alt="Valentine's Day Image" style="max-width: 300px; height: auto;">
+            <br/>
+            <br/>
+            <br/>
+            <button id="yesButton"> Yess..Meri battakh</button>
+            <button id="no"> Naah mai to harami hun kyu maanu teri baat </button>
+        </div>
+        <style>
+            body {
+                background: black;
+        }
+        div {
+                text-align: center;
+                vertical-align: middle;
+        }
+        h1 {
+                color: #ff477e;
+        }
+        #yesButton {
+                        background-color: #06d6a0;
+                        transition: transform 0.3s;
+                        margin-right: 10px;
+                        width: 350px;
+                        font-size: 30px;
+                        height: 40px;
+                        color: #fff;
+                        margin-left: -140px;
+        }
+        #no {
+                        position: absolute;
+                        background-color: #ef476f;
+                        transition: transform 0.3s;
+                        margin-left: 10px;
+                        width: 250px;
+                        /* font-size: 30px; */
+                        height: 40px;
+                        color: #fff;
+                    
+        }
+        </style>
+        <script >
+            
+            document.getElementById("yesButton").addEventListener("click", showAlert);
+
+            function showAlert() {
+                alert("lobb u mere pyaare se motichoor and yeah thanekar ji");
+            }
+
+            var yesButton = document.getElementById("yesButton");
+            var no = document.getElementById("no");
+            var valentineImage = document.getElementById("Ahmm");
+
+            var noTexts = ["Soch le?", "Gaal kheenchne dungi agr maan lega to (shart hai uspe bhi)", "Agr na hi bolna teko to phir theek hai", "Achha ...chodh na haan bol de maan le meri baat", "arey tu pyara sa motichoor hai to kyu nhi maan rha", "Bikram ke khatir maanja","Puspa ka waasta","maana ya maano-mujhe kya "];
+            var imageSources = ["https://pbs.twimg.com/media/Fyk7XMnaEAI3PsB.jpg", "https://media.tenor.com/BP70qe8X0J8AAAAe/crycat-crying-cat.png", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9e71v7IfFLLS_1CfY2it3an-6XH1uROjTfU5c88AwRL8aRkqAYDmoFrm9gpbUqwNameo&usqp=CAU", "https://i.pinimg.com/736x/cb/d8/3b/cbd83b534a315e809a9da2b8cd3ac3bf.jpg"];
+
+            no.addEventListener("click", change);
+
+            function change() {
+                var randomIndex = Math.floor(Math.random() * noTexts.length);
+                var randomText = noTexts[randomIndex];
+                no.innerText = randomText;
+
+                var i = Math.floor(Math.random() * 1000) + 1;
+                var j = Math.floor(Math.random() * 700) + 1;
+                no.style.left = i + "px";
+                no.style.top = j + "px";
+
+                var currentWidth = yesButton.offsetWidth;
+                var currentHeight = yesButton.offsetHeight
+                yesButton.style.width = currentWidth + 30 + "px";
+                yesButton.style.height = currentHeight + 10 + "px";
+
+                var randomImageIndex = Math.floor(Math.random() * imageSources.length);
+                valentineImage.src = imageSources[randomImageIndex];
+            }
+        
+        </script>
+        
+    </body>
+</html>
